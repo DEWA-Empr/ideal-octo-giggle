@@ -1,0 +1,4 @@
+# Finance Budget Application Requirements
+# This application uses only Python standard library
+# No external dependencies required
+# Python 3.6 or higher required
