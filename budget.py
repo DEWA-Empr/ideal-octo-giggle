@@ -3,8 +3,8 @@ Finance Budget Application
 A simple application to track and manage income budgets on daily, monthly, and yearly basis.
 """
 
-from datetime import datetime, date
-from typing import Dict, List, Optional
+from datetime import date
+from typing import Dict, Optional
 import json
 
 
