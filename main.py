@@ -173,8 +173,12 @@ def main():
         elif choice == '0':
             # Exit
             print("\nSaving your data...")
-            tracker.save_to_file(data_file)
-            print("Thank you for using Finance Budget Application!")
+            try:
+                tracker.save_to_file(data_file)
+                print("Thank you for using Finance Budget Application!")
+            except Exception as e:
+                print(f"Warning: Could not save data: {e}")
+                print("Thank you for using Finance Budget Application!")
             print("Goodbye!")
             sys.exit(0)
         
