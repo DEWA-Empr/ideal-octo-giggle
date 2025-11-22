@@ -24,10 +24,7 @@ class BudgetTracker:
         if amount < 0:
             raise ValueError("Income amount must be positive")
         
-        if date_str in self.daily_budget:
-            self.daily_budget[date_str] += amount
-        else:
-            self.daily_budget[date_str] = amount
+        self.daily_budget[date_str] = self.daily_budget.get(date_str, 0.0) + amount
     
     def add_monthly_income(self, amount: float, month_str: Optional[str] = None) -> None:
         """Add income for a specific month (format: YYYY-MM)"""
@@ -37,10 +34,7 @@ class BudgetTracker:
         if amount < 0:
             raise ValueError("Income amount must be positive")
         
-        if month_str in self.monthly_budget:
-            self.monthly_budget[month_str] += amount
-        else:
-            self.monthly_budget[month_str] = amount
+        self.monthly_budget[month_str] = self.monthly_budget.get(month_str, 0.0) + amount
     
     def add_yearly_income(self, amount: float, year_str: Optional[str] = None) -> None:
         """Add income for a specific year (format: YYYY)"""
@@ -50,10 +44,7 @@ class BudgetTracker:
         if amount < 0:
             raise ValueError("Income amount must be positive")
         
-        if year_str in self.yearly_budget:
-            self.yearly_budget[year_str] += amount
-        else:
-            self.yearly_budget[year_str] = amount
+        self.yearly_budget[year_str] = self.yearly_budget.get(year_str, 0.0) + amount
     
     def get_daily_budget(self, date_str: Optional[str] = None) -> float:
         """Get budget for a specific day"""
